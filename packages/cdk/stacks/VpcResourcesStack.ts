@@ -48,7 +48,7 @@ export class VpcResourcesStack extends Stack {
 
     // Imports
     const cloudwatchKmsKey = Key.fromKeyArn(
-      this, "cloudwatchKmsKey", Fn.importValue("account-resources:CloudwatchLogsKmsKeyArn"))
+      this, "cloudwatchKmsKey", Fn.importValue("account-resources-cdk-uk:KMS:CloudwatchLogsKmsKey:Arn"))
 
     // Resources
     const flowLogsRole = new Role(this, "VpcFlowLogsRole", {
